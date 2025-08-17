@@ -29,4 +29,4 @@ Optional:
  - GND der Messspitze an GND des Arduino
  
  ## 4. Arduino Daten erfassen:
- - 
+ - In der Arduino IDE den Port des Arduino kopieren und in Datenmessung.py einfügen

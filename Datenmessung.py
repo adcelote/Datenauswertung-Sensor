@@ -1,9 +1,9 @@
 #
-//  Datenmessung.py
-//  
-//
-//  Created by Adrian Wald on 17.08.25.
-//
+#  Datenmessung.py
+#
+#
+#  Created by Adrian Wald on 17.08.25.
+#
 
 import serial
 import time
@@ -11,7 +11,7 @@ import csv
 
 # Finde den richtigen Port im Arduino IDE (unter Werkzeuge -> Port)
 # Beispiele: 'COM3' (Windows), '/dev/ttyUSB0' oder '/dev/tty.usbmodem...' (Mac/Linux)
-ARDUINO_PORT = 'COM3' # ANPASSEN!
+ARDUINO_PORT = '/dev/cu.usbmodem11301' # ANPASSEN!
 BAUD_RATE = 9600
 CSV_FILE = 'sensor_data_real.csv'
 SAMPLES_TO_CAPTURE = 500 # Wie viele Messwerte wir aufnehmen wollen
