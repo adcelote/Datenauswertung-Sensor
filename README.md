@@ -1,0 +1,1 @@
+Ziel des Projektes ist der bau einer realen Sensorschaltung, die Erfassung der Daten mit einem Arduino, die Validierung des elektrische Signal mit dem Analog Discovery 3 und Analyse der erfassten Daten mit einem Python-Skript
