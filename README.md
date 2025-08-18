@@ -28,10 +28,13 @@ Dieses Projekt erfordert einen Arduino und einen Computer mit Python 3.
 
 ### 1\. Vorbereitung & Installation
 
-a. **Hardware:** Baue die Schaltung wie unten beschrieben auf und lade die Firmware (`Messprogramm`) mit der [Arduino IDE](https://www.arduino.cc/en/software) auf den Mikrocontroller.
+a. **Hardware:** Baue die Schaltung wie unten gezeigt auf und lade die Firmware (`Messprogramm`) mit der [Arduino IDE](https://www.arduino.cc/en/software) auf den Mikrocontroller.
 Für die Schaltung wird verwendet:
 - Potentiometer (Bspw. 50K Ohm)
 - 3 x male-female Jumper
+
+  <img width="348" height="509" alt="Schaltungsaufbau" src="https://github.com/user-attachments/assets/fbb568aa-6f3d-4a46-a3b2-f2d592049038" />
+
 
 b. **Software:** Klone dieses Repository und richte die Python-Umgebung im Projektordner ein:
 
