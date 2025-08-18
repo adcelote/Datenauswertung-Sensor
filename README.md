@@ -24,58 +24,51 @@ Das Projekt deckt folgende Schritte ab:
 
 ## Setup & Anwendung
 
-Setup:
-```
+Dieses Projekt erfordert einen Arduino und einen Computer mit Python 3.
+
+### 1\. Vorbereitung & Installation
+
+a. **Hardware:** Baue die Schaltung wie unten beschrieben auf und lade die Firmware (`Messprogramm`) mit der [Arduino IDE](https://www.arduino.cc/en/software) auf den Mikrocontroller.
+Für die Schaltung wird verwendet:
+- Potentiometer (Bspw. 50K Ohm)
+- 3 x male-female Jumper
+
+b. **Software:** Klone dieses Repository und richte die Python-Umgebung im Projektordner ein:
+
+```bash
+# Virtuelle Umgebung erstellen und aktivieren
+python -m venv venv
+source venv/bin/activate  # für macOS/Linux bzw. .\venv\Scripts\activate für Windows
+
+# Benötigte Bibliotheken installieren
 pip install pandas numpy matplotlib scipy pyserial
 ```
-
-Benötigt:
-- Potentiometer (Bspw. 50K \Ohm)
-- Arduino
-- 3 x male-female Jumper
-  
-Optional:
-- Analog Discovery 3
-- Messspitze
-- 1 x male-male Jumper
-
-
-## 1. Sensoraufbau: 
-- Einer der äußeren Pins des Potis mit Power GND des Arduinos verbinden
-- Anderer äußerer Pin mit Power 5V verbinden
-- Mittlerer mit A0 verbinden
-
-## 2. Arduino Programm:
- - Messprogramm.cpp herunterladen
- - Arduino IDE herunterladen und installieren (z.B mit ```brew install arduino-ide```)
- - Arduino mit IDE verbinden
- - Messprogramm auf Arduino hochladen
- - Serieller Monitor Baudrate auf 9600 baud stellen
- 
- ## (Optional) 3. Signal Validierung mit Analog Discovery:
- - Waveforms herunterladen
- - Analog Discovery mit Computer verbinden
- - Messspitze an mittleren Anschluss des Potentiometers
- - GND der Messspitze an GND des Arduino
-
+### 2\. Validierung der Messergebnisse
+a. Stelle im Seriellen Monitor die Baudrate auf 9600 baud
+b. Verbinde das Oszilloskop (z.B Analog Discovery) mit dem Ausgang des Potentiometers
+c. Vergleiche die Veränderung der Messwerte des Arduinos (0-1023 = 0-5V) mit den Messwerten des Oszilloskops.
    <img width="1470" height="867" alt="Bildschirmfoto 2025-08-17 um 20 45 16" src="https://github.com/user-attachments/assets/cd3c930c-f147-4766-8408-c561886891cc" />
 
- 
- ## 4. Arduino Daten erfassen:
- - In der Arduino IDE den Port des Arduino kopieren und in Datenmessung.py einfügen
- - Terminal öffnen
-   ```
-   python -m venv venv
-   source venv/bin/activate
-   pip install pandas numpy matplotlib scipy
-   python Datenmessung.py
-   ```
-   und währenddessen den Poti drehen.
+### 3\. Datenerfassung
 
- ## 5. CSV zu Diagramm:
- - ".csv" aus Schritt 4 als Pfad kopieren und in "Datenanalyse.py" einfügen.
- - Im Terminal
+a. Trage den korrekten COM-Port deines Arduinos in der Datei `Datenmessung.py` ein.
+b. Starte die Messung. Drehe während der Aufzeichnung am Potentiometer, um das Signal zu verändern.
+
+```bash
+python Datenmessung.py
 ```
-   python Datenanalyse.py
+
+c. Das Skript erstellt eine Datei namens `sensordaten.csv`.
+
+### 4\. Analyse & Visualisierung
+
+Führe das Analyse-Skript aus. Es liest automatisch die `sensordaten.csv` und generiert den Ergebnis-Plot.
+
+```bash
+python Datenanalyse.py
 ```
  
+
+
+
+
