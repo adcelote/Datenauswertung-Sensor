@@ -1,5 +1,10 @@
 ## Ziel des Projektes ist der bau einer realen Sensorschaltung, die Erfassung der Daten mit einem Arduino, die Validierung des elektrische Signal mit dem Analog Discovery 3 und zuletzt die Analyse der erfassten Daten mit einem Python-Skript.
 
+Setup:
+```
+pip install pandas numpy matplotlib scipy pyserial
+```
+
 Benötigt:
 - Potentiometer (Bspw. 50K \Ohm)
 - Arduino
