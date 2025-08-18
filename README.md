@@ -1,4 +1,28 @@
-## Ziel des Projektes ist der bau einer realen Sensorschaltung, die Erfassung der Daten mit einem Arduino, die Validierung des elektrische Signal mit dem Analog Discovery 3 und zuletzt die Analyse der erfassten Daten mit einem Python-Skript.
+# Analyse von realen Sensordaten mit Python und Arduino
+
+> Dieses Projekt demonstriert einen vollständigen Workflow zur Auswertung von Sensordaten. Der Prozess reicht von der Erfassung mit einem Arduino-Mikrocontroller über die Validierung mit einem Oszilloskop bis zur finalen Filterung (SciPy) und Visualisierung (Matplotlib) in Python.
+
+## Ergebnis
+
+<img width="1200" height="600" alt="Analyse der realen Sensordaten vom Arduino" src="https://github.com/user-attachments/assets/b5c5e7d6-16b2-42cc-8978-9ed3054f19af" />
+
+## Über das Projekt
+
+Ziel dieses Projektes ist der Aufbau einer realen Sensorschaltung, die Erfassung der Daten mit einem Arduino, die Validierung des elektrischen Signals mit einem Analog Discovery 3 und zuletzt die Analyse der erfassten Daten mit Python.
+
+Das Projekt deckt folgende Schritte ab:
+* **Hardware:** Aufbau einer Schaltung mit einem Potentiometer als steuerbare Spannungsquelle.
+* **Firmware:** Programmierung des Arduinos (C++) zur Messung und seriellen Ausgabe der Sensordaten.
+* **Validierung:** Überprüfung des analogen Signals mit einem externen Oszilloskop (Analog Discovery 3).
+* **Software:** Erfassung und Speicherung der Daten mit einem Python-Skript (`pyserial`).
+* **Analyse:** Filterung des Signals mit einem Butterworth-Tiefpassfilter (`scipy.signal`) und Visualisierung der Roh- und Filterdaten mit `matplotlib`.
+
+## Verwendete Technologien
+* **Hardware:** Arduino Uno, Analog Discovery 3
+* **Sprachen:** Python, C++
+* **Python-Bibliotheken:** Pandas, NumPy, Matplotlib, SciPy, PySerial
+
+## Setup & Anwendung
 
 Setup:
 ```
@@ -9,6 +33,7 @@ Benötigt:
 - Potentiometer (Bspw. 50K \Ohm)
 - Arduino
 - 3 x male-female Jumper
+  
 Optional:
 - Analog Discovery 3
 - Messspitze
@@ -53,5 +78,4 @@ Optional:
 ```
    python Datenanalyse.py
 ```
- - Plot öffnet sich - Vergleich: 
- <img width="1200" height="600" alt="Analyse der realen Sensordaten vom Arduino" src="https://github.com/user-attachments/assets/b5c5e7d6-16b2-42cc-8978-9ed3054f19af" />
+ 
